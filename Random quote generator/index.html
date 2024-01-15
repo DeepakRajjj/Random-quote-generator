@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background:     #001787;
+    }
+    .content{
+        max-width:600px;
+        padding: 20px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    h2{
+        background: #001787;
+        color: white;
+        padding: 1px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .btn{
+        margin-top: 30px;
+        height: 50px;
+        width: 150px;
+        font-size: 18px;
+        color: white;
+        background-color: #001787;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .card{
+        padding: 15px 30px 15px 30px;
+        max-width: 500px;
+        max-height: 300px;
+        text-align: center;
+       background-color: #ffffff;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="card">
+            <h2>Random Quote</h2>
+            <button onclick="displayQuote()" class="btn">Generate</button>
+        </div>
+        <div id="quote"></div>
+    </div>
+ <script>
+    let color = ['red','orange','blue','green','yellow','pink'];
+    let quotes =[
+    'The greatest glory in living lies not in never falling, but in rising every time we fall. ( -Nelson Mandela)',
+'The way to get started is to quit talking and begin doing.(-Walt Disney)',
+'Your time is limited, so do not waste it living someone else life. Do not be trapped by dogma which is living with the results of other people is thinking. (-Steve Jobs)',
+'If life were predictable it would cease to be life, and be without flavor. (-Eleanor Roosevelt)',
+'If you look at what you have in life, you will always have more. If you look at what you do not have in life, you will never have enough. (-Oprah Winfrey)',
+'If you set your goals ridiculously high and it is a failure, you will fail above everyone else success. (-James Cameron)',
+'Life is what happens when you are busy making other plans.(-John Lennon)'
+    ]
+
+    function displayQuote()
+    {
+        let index=Math.floor(Math.random()*quotes.length);
+        let div=document.querySelector('#quote');
+        let quote= `<div class ="card">
+        <p>${quotes[index]}</p>
+        </div>`;
+        div.innerHTML=quote;
+    }
+ </script>   
+</body>
+</html> 
+
+
+
